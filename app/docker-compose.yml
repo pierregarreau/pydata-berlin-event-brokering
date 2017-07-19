@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  event-brokering-rasberry-1:
+    build: ./rasberry
+    env_file: ./rasberry/.rasberry-1.env
+    image: event-brokering-rasberry
+    container_name: rasberry-1
+    links:
+      - event-brokering-mosquitto
+    depends_on:
+      - event-brokering-mosquitto
+    command: python driver.py
+  event-brokering-rasberry-2:
+    build: ./rasberry
+    env_file: ./rasberry/.rasberry-2.env
+    image: event-brokering-rasberry
+    container_name: rasberry-2
+    links:
+      - event-brokering-mosquitto
+    depends_on:
+      - event-brokering-mosquitto
+    command: python driver.py
+  event-brokering-main:
+    build: ./eventdetector
+    env_file: ./eventdetector/.eventdetector.env
+    image: event-brokering-main
+    container_name: main
+    links:
+      - event-brokering-mosquitto
+    depends_on:
+      - event-brokering-mosquitto
+    command: python driver.py
+  event-brokering-mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - /mosquitto/config
+      - /mosquitto/data
+      - /mosquitto/log
