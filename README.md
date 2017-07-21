@@ -4,7 +4,7 @@
 
 ## Get started
 
-To fire up the app, `cd` into the `app` folder and start `docker-compose`. This assumes you have docker installed. For a short introduction to docker, visit [this page](docker.com):
+To fire up the app, `cd` into the `app` folder and start `docker-compose`. This assumes you have docker installed. For a short introduction to docker, visit [this page](http://www.docker.com):
 
 ```
 # docker-compose up --build -d
@@ -24,7 +24,7 @@ $ mosquitto_sub -h localhost -p 1883 -t 'EVENT/PYDATA_BERLIN_MEETUP-PORT2/#'
 
 ## Storytelling
 
-This project is a showcase presented at [PyData-Berlin]() on 2017-07-19. It shows how the MQTT protocol, originally developed for IOT applications, can also be used at a legitimate event broker within a (python) App.
+This project is a showcase presented at [PyData-Berlin](https://www.meetup.com/PyData-Berlin/events/241567414/) on 2017-07-19. It shows how the MQTT protocol, originally developed for IOT applications, can also be used at a legitimate event broker within a (python) App.
 
 We make use of two main libraries here:
 * [eclipse-paho.mqtt](https://github.com/eclipse/paho.mqtt.python) for the message broker and;
