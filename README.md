@@ -4,7 +4,7 @@
 
 ## Get started
 
-To fire up the app, `cd` into the `app` folder and start `docker-compose`. This assumes you have docker installed. For short a short introduction to docker, visit [this page](docker.com):
+To fire up the app, `cd` into the `app` folder and start `docker-compose`. This assumes you have docker installed. For a short introduction to docker, visit [this page](docker.com):
 
 ```
 # docker-compose up --build -d
